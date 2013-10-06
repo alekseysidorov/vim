@@ -1,0 +1,10 @@
+syntax on
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set autoindent
+set cindent
+set expandtab
+set smartindent
+set t_Co=256
+colorscheme distinguished
