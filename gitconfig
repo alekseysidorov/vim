@@ -1,0 +1,7 @@
+[push]
+	default = simple
+[user]
+	name = Aleksey Sidorov
+	email = gorthauer87@ya.ru
+[core]
+	editor = vim
