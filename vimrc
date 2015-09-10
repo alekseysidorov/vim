@@ -1,4 +1,7 @@
+"Vundle
+
 set nocompatible               " be iMproved
+
 filetype off                   " must be off before Vundle has run
 
 if !isdirectory(expand("~/.vim/bundle/Vundle.vim/.git"))
@@ -12,20 +15,26 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Color schemes
-Plugin 'flazz/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ColorSchemeMenuMaker'
-Plugin 'rainux/vim-desert-warm-256'
+Plugin 'Lokaltog/vim-distinguished'
+
+" Rust support
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on     " and turn it back on!
 
-if !isdirectory(expand("~/.vim/colors/.git"))
-    !git clone git@github.com:Lokaltog/vim-distinguished.git ~/.vim/colors/
-endif    
-
-colorscheme distinguished
+" Configuration
 
 syntax on
 set smarttab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set autoindent
+set cindent
+set expandtab
+set smartindent
+set t_Co=256
+
+colorscheme distinguished
 
