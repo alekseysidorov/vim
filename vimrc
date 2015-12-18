@@ -23,6 +23,9 @@ Plugin 'rust-lang/rust.vim'
 " Swift support
 Plugin 'keith/swift.vim'
 
+" Clang support
+Plugin 'justmao945/vim-clang'
+
 call vundle#end()
 filetype plugin indent on     " and turn it back on!
 
