@@ -26,6 +26,9 @@ Plugin 'keith/swift.vim'
 " Clang support
 Plugin 'justmao945/vim-clang'
 
+" Homebrew support
+Plugin 'xu-cheng/brew.vim'
+
 call vundle#end()
 filetype plugin indent on     " and turn it back on!
 

@@ -4,4 +4,6 @@
 	name = Aleksey Sidorov
 	email = gorthauer87@ya.ru
 [core]
-	editor = vim
+    editor = vim
+[alias]
+    upsync = !git pull upstream $1 && git push origin
