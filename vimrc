@@ -29,6 +29,9 @@ Plugin 'justmao945/vim-clang'
 " Homebrew support
 Plugin 'xu-cheng/brew.vim'
 
+" OpenCL support
+Plugin 'petRUShka/vim-opencl'
+
 call vundle#end()
 filetype plugin indent on     " and turn it back on!
 
