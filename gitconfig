@@ -5,5 +5,3 @@
 	email = gorthauer87@ya.ru
 [core]
     editor = vim
-[alias]
-    upsync = !git pull upstream $1 && git push origin
