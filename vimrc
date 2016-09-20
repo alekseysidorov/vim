@@ -32,6 +32,9 @@ Plugin 'xu-cheng/brew.vim'
 " OpenCL support
 Plugin 'petRUShka/vim-opencl'
 
+" toml support
+Plugin 'cespare/vim-toml'
+
 call vundle#end()
 filetype plugin indent on     " and turn it back on!
 
