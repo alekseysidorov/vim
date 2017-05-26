@@ -35,6 +35,9 @@ Plugin 'petRUShka/vim-opencl'
 " toml support
 Plugin 'cespare/vim-toml'
 
+" python support
+Plugin 'davidhalter/jedi-vim'
+
 call vundle#end()
 filetype plugin indent on     " and turn it back on!
 
