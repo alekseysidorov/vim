@@ -1,45 +1,47 @@
-"Vundle
-
-set nocompatible               " be iMproved
-
-filetype off                   " must be off before Vundle has run
-
-if !isdirectory(expand("~/.vim/bundle/Vundle.vim/.git"))
-    !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set runtimepath+=~/.vim/bundle/Vundle.vim
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-call vundle#begin()
+" Make sure you use single quotes
 
-Plugin 'gmarik/Vundle.vim'
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
 
 " Color schemes
-Plugin 'Lokaltog/vim-distinguished'
-
-" Rust support
-Plugin 'rust-lang/rust.vim'
-
-" Swift support
-Plugin 'keith/swift.vim'
-
-" Clang support
-Plugin 'justmao945/vim-clang'
-
-" Homebrew support
-Plugin 'xu-cheng/brew.vim'
-
-" OpenCL support
-Plugin 'petRUShka/vim-opencl'
+Plug 'Lokaltog/vim-distinguished'
 
 " toml support
-Plugin 'cespare/vim-toml'
+Plug 'cespare/vim-toml'
 
 " python support
-Plugin 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
-call vundle#end()
-filetype plugin indent on     " and turn it back on!
+" Clang support
+Plug 'justmao945/vim-clang'
+
+" OpenCL support
+Plug 'petRUShka/vim-opencl'
+
+" Language server protocol
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Initialize plugin system
+call plug#end()
 
 " Configuration
 
@@ -58,3 +60,12 @@ colorscheme distinguished
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+" LSP config
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
