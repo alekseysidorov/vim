@@ -1,7 +1,10 @@
-[push]
-	default = simple
 [user]
-	name = Aleksey Sidorov
-	email = gorthauer87@ya.ru
+    name = Aleksei Sidorov
+    email = gorthauer87@yandex.ru
+
+[alias]
+    cln = !git clean -dxf -e \"/.vscode\" -e \".idea\" -e \"keys\"
+
 [core]
     editor = vim
+    filemode = true

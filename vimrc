@@ -23,22 +23,11 @@ Plug 'cespare/vim-toml'
 " python support
 Plug 'davidhalter/jedi-vim'
 
-" Clang support
-Plug 'justmao945/vim-clang'
-
-" OpenCL support
-Plug 'petRUShka/vim-opencl'
-
 " Language server protocol
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-
-" (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Initialize plugin system
 call plug#end()
@@ -65,7 +54,3 @@ set backspace=indent,eol,start
 set hidden
 
 " LSP config
-
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
